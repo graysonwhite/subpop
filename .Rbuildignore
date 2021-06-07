@@ -2,3 +2,5 @@
 ^LICENSE\.md$
 wolfSAE.Rproj
 ^README\.Rmd$
+^.*\.Rproj$
+^\.Rproj\.user$

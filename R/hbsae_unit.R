@@ -29,8 +29,8 @@ hbsae_unit <- function(data, formula, small_area, pop_data) {
     tibble::column_to_rownames("zoneid")
 
   # Create lambda
-  anova <- aov(y ~ small_area, data = model_frame)
-  l <- summary(anova)[[1]]["small_area", "F value"]
+  # anova <- aov(y ~ small_area, data = model_frame)
+  # l <- summary(anova)[[1]]["small_area", "F value"]
 
   # Fit the model
   mod <- hbsae::fSAE.Unit(
@@ -40,7 +40,7 @@ hbsae_unit <- function(data, formula, small_area, pop_data) {
     Narea = pop_size$pop_size,
     Xpop = pop_means,
     fpc = TRUE,
-    lambda0 = l,
+   # lambda0 = l,
     silent = T
   )
 

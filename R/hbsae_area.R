@@ -9,7 +9,7 @@
 #' @importFrom dplyr %>%
 #' @export
 
-hb_area <- function(data, formula, small_area,
+hbsae_area <- function(data, formula, small_area,
                     pop_data, post_strat_data) {
   # Create unnamed model frame (to call correct y var in a filter)
   mf <- model.frame(formula, data)

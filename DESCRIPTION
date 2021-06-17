@@ -1,5 +1,5 @@
 Package: subpop
-Title: What the Package Does (One Line, Title Case)
+Title: Tidy Small Area Estimation Models
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Grayson",
@@ -7,7 +7,9 @@ Authors@R:
            role = c("aut", "cre"),
            email = "graysonwhite13@gmail.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: Unit- and area-level small area estimation models
+    can be fit with this package through hierarchical Bayesian
+    and frequentist methods. 
 License: CC0
 Encoding: UTF-8
 LazyData: true

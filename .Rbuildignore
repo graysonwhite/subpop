@@ -1,6 +1,7 @@
 ^$
 ^LICENSE\.md$
-wolfSAE.Rproj
+tidysae.Rproj
 ^README\.Rmd$
 ^.*\.Rproj$
 ^\.Rproj\.user$
+sandbox

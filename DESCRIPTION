@@ -21,4 +21,7 @@ Imports:
     dplyr,
     sae,
     tibble,
-    tidyr
+    tidyr,
+    rlang
+Depends: 
+    parsnip

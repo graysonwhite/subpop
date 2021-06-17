@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# tidysae
+# subpop
 
 <!-- badges: start -->
 <!-- badges: end -->
@@ -14,22 +14,22 @@ to provide a link between small area estimation packages and the
 
 ## Installation
 
-<!-- You can install the released version of tidysae from [CRAN](https://CRAN.R-project.org) with: -->
+<!-- You can install the released version of subpop from [CRAN](https://CRAN.R-project.org) with: -->
 <!-- ``` r -->
-<!-- install.packages("tidysae") -->
+<!-- install.packages("subpop") -->
 <!-- ``` -->
 
 And the development version from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("graysonwhite/tidysae")
+devtools::install_github("graysonwhite/subpop")
 ```
 
 <!-- ## Example -->
 <!-- This is a basic example which shows you how to solve a common problem: -->
 <!-- ```{r example} -->
-<!-- library(tidysae) -->
+<!-- library(subpop) -->
 <!-- ## basic example code -->
 <!-- ``` -->
 <!-- What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so: -->

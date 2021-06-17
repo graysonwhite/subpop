@@ -4,11 +4,13 @@
 \alias{area_level}
 \title{The basic area-level small area estimation model.}
 \usage{
-area_level(mode = "regression", within_variance = NULL)
+area_level(mode = "regression", areas = NULL, within_variance = NULL)
 }
 \arguments{
 \item{mode}{A single character string for the type of model.
 Possible value is "regression".}
+
+\item{areas}{The small areas.}
 
 \item{within_variance}{The within-area variance for the small area model.}
 }

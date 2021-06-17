@@ -5,6 +5,33 @@ make_area_level <- function() {
   
   # ----------------------------------------------------------------------------
   
+  parsnip::set_model_arg(
+    model = "area_level",
+    eng = "sae",
+    parsnip = "small_areas",
+    original = "dom",
+    func = list(pkg = "base", fun = "factor"),
+    has_submodel = FALSE
+  )
+  
+  parsnip::set_model_arg(
+    model = "area_level",
+    eng = "hbsae",
+    parsnip = "small_areas",
+    original = "area",
+    func = list(pkg = "base", fun = "factor"),
+    has_submodel = FALSE
+  )
+  
+  parsnip::set_model_arg(
+    model = "area_level",
+    eng = "mcmcsae",
+    parsnip = "small_areas",
+    original = "factor",
+    func = list(pkg = "base", fun = "factor"),
+    has_submodel = FALSE
+  )
+  
   parsnip::set_model_engine(
     "area_level", 
     mode = "regression", 

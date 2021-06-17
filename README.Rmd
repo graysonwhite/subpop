@@ -13,33 +13,33 @@ knitr::opts_chunk$set(
 )
 ```
 
-# wolfSAE
+# tidysae
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-This package is currently under development and is not yet ready for use in small area estimation research. For now, please use packagaes such as `sae`, `hbsae`, `mase`, etc. to compute your estimates.
+This package is currently under development and is not yet ready for use in small area estimation research/modeling. The goal of this package is to provide a link between small area estimation packages and the `tidymodels`. For now, please use packages such as `sae`, `hbsae`, `mase`, etc. to compute your estimates.
 
 ## Installation
 
-<!-- You can install the released version of wolfSAE from [CRAN](https://CRAN.R-project.org) with: -->
+<!-- You can install the released version of tidysae from [CRAN](https://CRAN.R-project.org) with: -->
 
 <!-- ``` r -->
-<!-- install.packages("wolfSAE") -->
+<!-- install.packages("tidysae") -->
 <!-- ``` -->
 
 And the development version from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("graysonwhite/wolfSAE")
+devtools::install_github("graysonwhite/tidysae")
 ```
 <!-- ## Example -->
 
 <!-- This is a basic example which shows you how to solve a common problem: -->
 
 <!-- ```{r example} -->
-<!-- library(wolfSAE) -->
+<!-- library(tidysae) -->
 <!-- ## basic example code -->
 <!-- ``` -->
 

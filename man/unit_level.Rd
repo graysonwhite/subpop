@@ -4,7 +4,12 @@
 \alias{unit_level}
 \title{The basic unit-level small area estimation model.}
 \usage{
-unit_level(mode = "regression", areas = NULL)
+unit_level(
+  mode = "regression",
+  small_areas = NULL,
+  explanatory_means = NULL,
+  small_area_size = NULL
+)
 }
 \arguments{
 \item{mode}{A single character string for the type of model.

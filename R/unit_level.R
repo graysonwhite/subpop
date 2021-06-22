@@ -6,12 +6,17 @@
 #' @export
 
 unit_level <- 
-  function(mode = "regression", areas = NULL) {
+  function(mode = "regression",
+           small_areas = NULL,
+           explanatory_means = NULL,
+           small_area_size = NULL) {
     if (mode  != "regression") {
       rlang::abort("`mode` should be 'regression'")
     }
     
-    args = list(areas = {{ areas }})
+    args = list(small_areas = {{ small_areas }},
+                explanatory_means = {{ explanatory_means }},
+                small_area_size = {{ small_area_size }})
     
     parsnip::new_model_spec(
       "unit_level",

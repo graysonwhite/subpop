@@ -38,6 +38,24 @@ make_unit_level <- function() {
   
   parsnip::set_model_arg(
     model = "unit_level",
+    eng = "sae",
+    parsnip = "explanatory_means",
+    original = "meanxpop",
+    func = list(pkg = "base", fun = "mean"),
+    has_submodel = FALSE
+  )
+  
+  parsnip::set_model_arg(
+    model = "unit_level",
+    eng = "sae",
+    parsnip = "small_area_size",
+    original = "popnsize",
+    func = list(pkg = "base", fun = "sum"),
+    has_submodel = FALSE
+  )
+  
+  parsnip::set_model_arg(
+    model = "unit_level",
     eng = "hbsae",
     parsnip = "small_areas",
     original = "area",
@@ -52,5 +70,17 @@ make_unit_level <- function() {
     original = "factor",
     func = list(pkg = "base", fun = "factor"),
     has_submodel = FALSE
+  )
+  
+  parsnip::set_fit(
+    model = "unit_level",
+    mode = "regression",
+    eng = "sae",
+    value = list(
+      interface = "formula",
+      protect = c("formula", "data"),
+      func = c(pkg = "sae", fun = "eblupBHF"),
+      defaults = list()
+    )
   )
 }

@@ -1,19 +1,21 @@
 #' The basic area-level small area estimation model.
 #' @param mode A single character string for the type of model.
 #'  Possible value is "regression". 
-#' @param areas The small areas. 
+#' @param small_areas The small areas. 
 #' @param within_variance The within-area variance for the small area model. 
 #' @import parsnip
 #' @export
 
 area_level <- 
-  function(mode = "regression", areas = NULL, within_variance = NULL) {
+  function(mode = "regression",
+           small_areas = NULL,
+           within_variance = NULL) {
     if (mode  != "regression") {
       rlang::abort("`mode` should be 'regression'")
     }
     
     args = list(
-      areas = {{ areas }},
+      small_areas = {{ small_areas }},
       within_variance = {{ within_variance }}
       )
     

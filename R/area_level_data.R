@@ -5,14 +5,14 @@ make_area_level <- function() {
   
   # ----------------------------------------------------------------------------
   
-  parsnip::set_model_arg(
-    model = "area_level",
-    eng = "sae",
-    parsnip = "small_areas",
-    original = "dom",
-    func = list(pkg = "base", fun = "factor"),
-    has_submodel = FALSE
-  )
+  # parsnip::set_model_arg(
+  #   model = "area_level",
+  #   eng = "sae",
+  #   parsnip = "small_areas",
+  #   original = "dom",
+  #   func = list(pkg = "base", fun = "factor"),
+  #   has_submodel = FALSE
+  # )
   
   parsnip::set_model_arg(
     model = "area_level",
@@ -79,5 +79,17 @@ make_area_level <- function() {
     original = "Q0",
     func = list(pkg = "stats", fun = "var"),
     has_submodel = FALSE
+  )
+  
+  parsnip::set_fit(
+    model = "area_level",
+    mode = "regression",
+    eng = "sae",
+    value = list(
+      interface = "formula",
+      protect = c("formula", "data"),
+      func = c(pkg = "sae", fun = "eblupFH"),
+      defaults = list()
+    )
   )
 }

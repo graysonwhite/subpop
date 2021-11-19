@@ -88,7 +88,19 @@ make_basic_area_level <- function() {
     value = list(
       interface = "formula",
       protect = c("formula", "data"),
-      func = c(pkg = "sae", fun = "eblupFH"),
+      func = c(fun = "sae_mseFH_wrapper"),
+      defaults = list()
+    )
+  )
+  
+  parsnip::set_fit(
+    model = "basic_area_level",
+    mode = "regression",
+    eng = "hbsae",
+    value = list(
+      interface = "matrix",
+      protect = c("formula", "data"),
+      func = c(pkg = "hbsae", fun = "fSAE.Area"),
       defaults = list()
     )
   )

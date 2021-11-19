@@ -1,34 +1,34 @@
-make_unit_level <- function() {
-  parsnip::set_new_model("unit_level")
+make_basic_unit_level <- function() {
+  parsnip::set_new_model("basic_unit_level")
   
-  parsnip::set_model_mode(model = "unit_level", mode = "regression")
+  parsnip::set_model_mode(model = "basic_unit_level", mode = "regression")
   
   # ----------------------------------------------------------------------------
   
   parsnip::set_model_engine(
-    "unit_level", 
+    "basic_unit_level", 
     mode = "regression", 
     eng = "sae"
   )
   
   parsnip::set_model_engine(
-    "unit_level",
+    "basic_unit_level",
     mode = "regression",
     eng = "hbsae"
   )
   
   parsnip::set_model_engine(
-    "unit_level",
+    "basic_unit_level",
     mode = "regression",
     eng = "mcmcsae"
   )
   
-  parsnip::set_dependency("unit_level", eng = "sae", pkg = "sae")
-  parsnip::set_dependency("unit_level", eng = "hbsae", pkg = "hbsae")
-  parsnip::set_dependency("unit_level", eng = "mcmcsae", pkg = "mcmcsae")
+  parsnip::set_dependency("basic_unit_level", eng = "sae", pkg = "sae")
+  parsnip::set_dependency("basic_unit_level", eng = "hbsae", pkg = "hbsae")
+  parsnip::set_dependency("basic_unit_level", eng = "mcmcsae", pkg = "mcmcsae")
   
   parsnip::set_model_arg(
-    model = "unit_level",
+    model = "basic_unit_level",
     eng = "sae",
     parsnip = "small_areas",
     original = "dom",
@@ -37,7 +37,7 @@ make_unit_level <- function() {
   )
   
   parsnip::set_model_arg(
-    model = "unit_level",
+    model = "basic_unit_level",
     eng = "sae",
     parsnip = "explanatory_means",
     original = "meanxpop",
@@ -46,7 +46,7 @@ make_unit_level <- function() {
   )
   
   parsnip::set_model_arg(
-    model = "unit_level",
+    model = "basic_unit_level",
     eng = "sae",
     parsnip = "small_area_size",
     original = "popnsize",
@@ -55,7 +55,7 @@ make_unit_level <- function() {
   )
   
   parsnip::set_model_arg(
-    model = "unit_level",
+    model = "basic_unit_level",
     eng = "hbsae",
     parsnip = "small_areas",
     original = "area",
@@ -64,7 +64,7 @@ make_unit_level <- function() {
   )
   
   parsnip::set_model_arg(
-    model = "unit_level",
+    model = "basic_unit_level",
     eng = "mcmcsae",
     parsnip = "small_areas",
     original = "factor",
@@ -73,7 +73,7 @@ make_unit_level <- function() {
   )
   
   parsnip::set_fit(
-    model = "unit_level",
+    model = "basic_unit_level",
     mode = "regression",
     eng = "sae",
     value = list(

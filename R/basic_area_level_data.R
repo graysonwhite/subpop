@@ -47,6 +47,15 @@ make_basic_area_level <- function() {
   
   # parsnip::set_model_arg(
   #   model = "basic_area_level",
+  #   eng = "hbsae",
+  #   parsnip = "prior",
+  #   original = "prior",
+  #   func = list(pkg = "stats", fun = "var"),
+  #   has_submodel = FALSE
+  # )
+  
+  # parsnip::set_model_arg(
+  #   model = "basic_area_level",
   #   eng = "mcmcsae",
   #   parsnip = "within_variance",
   #   original = "Q0",

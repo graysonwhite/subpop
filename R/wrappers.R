@@ -93,18 +93,26 @@ hbsae_fSAE.Area_wrapper <- function (formula, data, var.init, x = NULL, ...)
   if (is.null(x)) {
     x <- X
   }
+  do.call(hbsae::fSAE.Area, args = list(
+    est.init = est.init,
+    var.init = var.init,
+    X = X,
+    x = x,
+    ... = ...)
+    )
   
   # run the hbsae function
-  if (nrow(X) > length(est.init)) 
-    x <- x[names(est.init), , drop = FALSE]
-  funArgs <- list(...)
-  funArgs$v <- funArgs$vpop <- funArgs$nu0 <- funArgs$s20 <- NULL
-  funArgs <- c(list(y = est.init, X = x, area = if (!is.null(names(est.init))) factor(names(est.init), 
-                                                                                      names(est.init)) else 1:length(est.init), Xpop = X, fpc = FALSE, 
-                    v = var.init, nu0 = 10000 * length(est.init), s20 = 1), 
-               funArgs)
-  out <- do.call(hbsae::fSAE.Unit, funArgs)
-  out$type <- "area"
-  out
+  # if (nrow(X) > length(est.init)) 
+  #   x <- x[names(est.init), , drop = FALSE]
+  # funArgs <- list(...)
+  # funArgs$v <- funArgs$vpop <- funArgs$nu0 <- funArgs$s20 <- NULL
+  # funArgs <- c(list(y = est.init, X = x, area = if (!is.null(names(est.init))) factor(names(est.init), 
+  #                                                                                     names(est.init)) else 1:length(est.init), Xpop = X, fpc = FALSE, 
+  #                   v = var.init, nu0 = 10000 * length(est.init), s20 = 1), 
+  #              funArgs)
+  # out <- do.call(hbsae::fSAE.Unit, funArgs)
+  # out$type <- "area"
+  # out
 }
+
 

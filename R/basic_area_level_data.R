@@ -5,33 +5,6 @@ make_basic_area_level <- function() {
   
   # ----------------------------------------------------------------------------
   
-  # parsnip::set_model_arg(
-  #   model = "basic_area_level",
-  #   eng = "sae",
-  #   parsnip = "domains",
-  #   original = "dom",
-  #   func = list(pkg = "base", fun = "factor"),
-  #   has_submodel = FALSE
-  # )
-
-  # parsnip::set_model_arg(
-  #   model = "basic_area_level",
-  #   eng = "hbsae",
-  #   parsnip = "domains",
-  #   original = "area",
-  #   func = list(pkg = "base", fun = "factor"),
-  #   has_submodel = FALSE
-  # )
-  
-  # parsnip::set_model_arg(
-  #   model = "basic_area_level",
-  #   eng = "mcmcsae",
-  #   parsnip = "domains",
-  #   original = "factor",
-  #   func = list(pkg = "base", fun = "factor"),
-  #   has_submodel = FALSE
-  # )
-  
   parsnip::set_model_engine(
     "basic_area_level", 
     mode = "regression", 

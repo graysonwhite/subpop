@@ -82,3 +82,29 @@ sae_mseFH_wrapper <- function (formula, vardir, method = "REML", MAXITER = 100,
   result$mse <- mse2d
   return(result)
 }
+
+hbsae_fSAE.Area_wrapper <- function (formula, data, var.init, x = NULL, ...) 
+{
+  # set up params hbsae form of function
+  data <- as.data.frame(data) # allow for tibbles to be input on user end.
+  X <- model.matrix(formula, data)
+  est.init <- model.frame(formula, data)[[1]]
+  var.init <- eval(as.name(var.init), envir = data)
+  if (is.null(x)) {
+    x <- X
+  }
+  
+  # run the hbsae function
+  if (nrow(X) > length(est.init)) 
+    x <- x[names(est.init), , drop = FALSE]
+  funArgs <- list(...)
+  funArgs$v <- funArgs$vpop <- funArgs$nu0 <- funArgs$s20 <- NULL
+  funArgs <- c(list(y = est.init, X = x, area = if (!is.null(names(est.init))) factor(names(est.init), 
+                                                                                      names(est.init)) else 1:length(est.init), Xpop = X, fpc = FALSE, 
+                    v = var.init, nu0 = 10000 * length(est.init), s20 = 1), 
+               funArgs)
+  out <- do.call(hbsae::fSAE.Unit, funArgs)
+  out$type <- "area"
+  out
+}
+

@@ -71,9 +71,9 @@ make_basic_area_level <- function() {
     mode = "regression",
     eng = "hbsae",
     value = list(
-      interface = "matrix",
+      interface = "formula",
       protect = c("formula", "data"),
-      func = c(pkg = "hbsae", fun = "fSAE.Area"),
+      func = c(fun = "hbsae_fSAE.Area_wrapper"),
       defaults = list()
     )
   )

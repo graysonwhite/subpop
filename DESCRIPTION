@@ -24,6 +24,7 @@ Imports:
     sae,
     tibble,
     tidyr,
-    rlang
+    rlang,
+    stats
 Depends: 
     parsnip

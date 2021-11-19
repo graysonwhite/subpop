@@ -8,6 +8,17 @@ sae_mseFH_wrapper <- function (formula, vardir, method = "REML", MAXITER = 100,
                                PRECISION = 1e-04, B = 0, data) 
 {
   data <- as.data.frame(data) # allow for tibbles to be input on user end.
+  # arg <- list(
+  #   formula = formula,
+  #   vardir = vardir,
+  #   method = method,
+  #   MAXITER = MAXITER,
+  #   PRECISION = PRECISION,
+  #   B = B,
+  #   data = data
+  # )
+  # do.call(sae::mseFH, args = arg)
+  
   result <- list(est = NA, mse = NA)
   namevar <- vardir # take as a string in this case.
   if (!missing(data)) {

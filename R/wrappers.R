@@ -3,7 +3,7 @@
 # They take the form "packagename_functionname_wrapper".
 # These functinos are for internal use and should not be accessed by the user.
 
-
+#' @export sae_mseFH_wrapper
 sae_mseFH_wrapper <- function (formula, vardir, method = "REML", MAXITER = 100,
                                PRECISION = 1e-04, B = 0, data) 
 {
@@ -21,6 +21,7 @@ sae_mseFH_wrapper <- function (formula, vardir, method = "REML", MAXITER = 100,
   do.call(sae::mseFH, args = arg)
 }
 
+#' @export hbsae_fSAE.Area_wrapper
 hbsae_fSAE.Area_wrapper <- function (formula, data, var.init, x = NULL, ...) 
 {
   # set up params hbsae form of function

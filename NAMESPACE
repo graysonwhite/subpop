@@ -2,6 +2,8 @@
 
 export(basic_area_level)
 export(basic_unit_level)
+export(hbsae_fSAE.Area_wrapper)
+export(sae_mseFH_wrapper)
 import(parsnip)
 import(rlang)
 importFrom(stats,model.frame)

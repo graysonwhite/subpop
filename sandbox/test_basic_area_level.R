@@ -3,8 +3,6 @@
 library(tidyverse) 
 library(sae)
 library(hbsae)
-devtools::install_github("graysonwhite/subpop")
-library(subpop)
 devtools::load_all()
 
 ## {sae} code in {subpop}

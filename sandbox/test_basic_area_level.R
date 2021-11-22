@@ -1,29 +1,28 @@
 # testing the area level model
 ## load packages
 library(tidyverse) 
+library(sae)
+library(hbsae)
+devtools::install_github("graysonwhite/subpop")
+library(subpop)
 devtools::load_all()
 
-## make area level data
-dat <- readRDS("sandbox/IDdata.rds")$pltassgn %>%
-  group_by(COUNTYFIPS) %>%
-  summarize(x1 = mean(tcc),
-            x2 = mean(elev),
-            y_var = var(BA_TPA_ADJ) / n(),
-            y = mean(BA_TPA_ADJ)) %>%
-  filter(y_var != 0) 
-
-## {sae}
-basic_area_level(within_area_variance = "y_var") %>%
+## {sae} code in {subpop}
+basic_area_level(within_area_variance = "var_BA_TPA_ADJ") %>%
   set_engine("sae") %>%
-  fit(formula = y ~ x1 + x2, data = dat)
+  fit(formula = BA_TPA_ADJ ~ tcc + elev, data = subpop::area_dat)
 
-sae::mseFH(y ~ x1 + x2, y_var, data = as.data.frame(dat))
+### the {sae} underlying code
+sae::mseFH(formula = BA_TPA_ADJ ~ tcc + elev, var_BA_TPA_ADJ,
+           data = as.data.frame(subpop::area_dat))
 
-## {hbsae}
-basic_area_level(within_area_variance = "y_var") %>%
+## {hbsae} code in {subpop}
+basic_area_level(within_area_variance = "var_BA_TPA_ADJ") %>%
   set_engine("hbsae") %>%
-  fit(formula = y ~ x1 + x2, data = dat)
+  fit(formula = BA_TPA_ADJ ~ tcc + elev, data = subpop::area_dat)
 
-hbsae::fSAE.Area(est.init = dat$y,
-                 var.init = dat$y_var,
-                 X = model.matrix(~ x1 + x2, data = dat))
+### the underlying {hbsae} code
+hbsae::fSAE.Area(est.init = subpop::area_dat$BA_TPA_ADJ,
+                 var.init = subpop::area_dat$var_BA_TPA_ADJ,
+                 X = model.matrix(~ tcc + elev,
+                                  data = as.data.frame(subpop::area_dat)))

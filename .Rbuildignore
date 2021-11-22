@@ -5,3 +5,4 @@ tidysae.Rproj
 ^.*\.Rproj$
 ^\.Rproj\.user$
 sandbox
+^data-raw$
